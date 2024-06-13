@@ -1,12 +1,14 @@
 import random 
 
-class Player():
+
+class Player:
     def __init__(self, name):
         self.name = name
 
-    def roll_dice(self, number_of_dice) -> list:
+    @staticmethod
+    def roll_dice(number_of_dice) -> list:
         result = []
-        roll = [random.randint(1,6) for i in range(number_of_dice)]
+        roll = [random.randint(1,6) for _ in range(number_of_dice)]
 
         total = sum(roll)
         result.append(total)
